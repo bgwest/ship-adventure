@@ -3,18 +3,26 @@ Using monogame (an adaption of XNA), create boilerplate ship-adventure game wher
 
 Stretch goals will be to code the ability for the ship to visit other planets while avoiding obstacles and gather supplies along the way.
 
-# local help
+# local developer environment
+
+### Main Software List
+
+- Visual Studio For Mac Community
+- mgcb-editor-mac
+- Visual Studio Code (mainly for odds and ends file extensions e.g. Markdown, XML, etc.)
+
+### Notes
 
 on visual studio macos community, things are feeling kind of buggy with the content manager.
 
 the best way I found to add content is running this on the CLI:
 mgcb-editor
 
+https://docs.monogame.net/articles/tools/mgcb_editor.html
+
 Then inside that standalone app doing all content editing via that window.
 
 Will update important workflow things as I encounter them.
-
-https://docs.monogame.net/articles/tools/mgcb_editor.html
 
 # Additional Resources
 
