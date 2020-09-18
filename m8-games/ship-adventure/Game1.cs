@@ -14,6 +14,8 @@ namespace ship_adventure
 
         SpriteFont Font;
 
+        Vector2 ShipPosition;
+
         string MY_TEXT;
 
         public Game1()
@@ -42,9 +44,34 @@ namespace ship_adventure
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
                 Exit();
+            }
 
-            // TODO: Add your update logic here
+            Vector2 movement = Vector2.Zero;
+            KeyboardState keystate = Keyboard.GetState();
+
+            if (keystate.IsKeyDown(Keys.Right))
+            {
+                movement.X += 2;
+            }
+
+            if (keystate.IsKeyDown(Keys.Left))
+            {
+                movement.X -= 2;
+            }
+
+            if (keystate.IsKeyDown(Keys.Up))
+            {
+                movement.Y -= 2;
+            }
+
+            if (keystate.IsKeyDown(Keys.Down))
+            {
+                movement.Y += 2;
+            }
+
+            ShipPosition += movement;
 
             base.Update(gameTime);
         }
@@ -56,7 +83,7 @@ namespace ship_adventure
 
             _spriteBatch.Begin();
             _spriteBatch.Draw(Background, Vector2.One, Color.White);
-            _spriteBatch.Draw(Ship, Vector2.One, Color.White);
+            _spriteBatch.Draw(Ship, ShipPosition, Color.White);
             _spriteBatch.DrawString(Font, MY_TEXT, Vector2.One, Color.Yellow);
             _spriteBatch.End();
 
