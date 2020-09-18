@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ship-adventure", "ship-adventure.csproj", "{C035366B-92C3-44BC-81F9-632FC9CDC8AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ship-adventure", "ship-adventure.csproj", "{9E23D832-98AD-49E2-8A43-BAB102EC30F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +9,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C035366B-92C3-44BC-81F9-632FC9CDC8AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C035366B-92C3-44BC-81F9-632FC9CDC8AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C035366B-92C3-44BC-81F9-632FC9CDC8AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C035366B-92C3-44BC-81F9-632FC9CDC8AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E23D832-98AD-49E2-8A43-BAB102EC30F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E23D832-98AD-49E2-8A43-BAB102EC30F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E23D832-98AD-49E2-8A43-BAB102EC30F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E23D832-98AD-49E2-8A43-BAB102EC30F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
