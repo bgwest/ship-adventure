@@ -9,6 +9,9 @@ namespace ship_adventure
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        Texture2D Ship;
+        Texture2D Background;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -27,7 +30,8 @@ namespace ship_adventure
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            Ship = Content.Load<Texture2D>("blueships1");
+            Background = Content.Load<Texture2D>("background");
         }
 
         protected override void Update(GameTime gameTime)
@@ -44,7 +48,10 @@ namespace ship_adventure
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            _spriteBatch.Begin();
+            _spriteBatch.Draw(Background, Vector2.One, Color.White);
+            _spriteBatch.Draw(Ship, Vector2.One, Color.White);
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
