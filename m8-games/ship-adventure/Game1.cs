@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
 
 namespace ship_adventure
 {
@@ -21,7 +20,8 @@ namespace ship_adventure
         Vector2 ShotPosition;
         Vector2 ShotOffset;
 
-        Song shootingSound;
+        SoundEffect shootingSound;
+        SoundEffectInstance soundFxInstance;
 
         string MY_TEXT;
 
@@ -51,7 +51,9 @@ namespace ship_adventure
 
             Font = Content.Load<SpriteFont>("defaultFont");
 
-            shootingSound = Content.Load<Song>("laser-cannon-chopped");
+            shootingSound = Content.Load<SoundEffect>("laser-cannon-chopped");
+            soundFxInstance = shootingSound.CreateInstance();
+            soundFxInstance.Volume = .4f;
 
             ShotOffset = new Vector2(Ship.Width / 2, Ship.Height / 2);
             ShotOffset += new Vector2(60, -24f);
@@ -91,7 +93,7 @@ namespace ship_adventure
             {
                 ShotPosition = ShipPosition + ShotOffset;
                 HasShot = true;
-                MediaPlayer.Play(shootingSound);
+                soundFxInstance.Play();
             }
 
             ShipPosition += movement;
