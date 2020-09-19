@@ -1,6 +1,6 @@
 # ship-adventure
 
-Using monogame (an adaption of XNA), create boilerplate ship-adventure game where you can fly a ship through space and fire your laser canon.
+Using Monogame (an adaption of XNA), create boilerplate game where you can fly a ship through space and fire your laser canon.
 
 Stretch goals will be to code the ability for the ship to visit other planets while avoiding obstacles and gather supplies along the way.
 
@@ -25,11 +25,12 @@ https://www.slideshare.net/SimonJackson58/getting-started-with-monogame-using-2d
 on visual studio macos community, things are feeling kind of buggy with the content manager.
 
 the best way I found to add content is running this on the CLI:
-mgcb-editor
+
+`mgcb-editor`
 
 https://docs.monogame.net/articles/tools/mgcb_editor.html
 
-Then inside that standalone app doing all content editing via that window.
+Then using that standalone window do all my content manipulation.
 
 Will update important workflow things as I encounter them.
 

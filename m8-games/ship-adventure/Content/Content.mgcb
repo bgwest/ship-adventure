@@ -25,6 +25,12 @@
 /processorParam:TextureFormat=Color
 /build:background.png
 
+#begin battleThemeA.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:battleThemeA.mp3
+
 #begin blueships1.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -43,6 +49,12 @@
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:defaultFont.spritefont
+
+#begin laser-cannon-chopped.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:laser-cannon-chopped.wav
 
 #begin shot.png
 /importer:TextureImporter

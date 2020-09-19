@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace ship_adventure
 {
@@ -18,6 +20,11 @@ namespace ship_adventure
         Vector2 ShipPosition;
         Vector2 ShotPosition;
         Vector2 ShotOffset;
+
+        SoundEffect shootingSound;
+        SoundEffectInstance soundFxInstance;
+
+        Song mainTheme;
 
         string MY_TEXT;
 
@@ -46,6 +53,14 @@ namespace ship_adventure
             Shot = Content.Load<Texture2D>("shot");
 
             Font = Content.Load<SpriteFont>("defaultFont");
+
+            shootingSound = Content.Load<SoundEffect>("laser-cannon-chopped");
+            soundFxInstance = shootingSound.CreateInstance();
+            soundFxInstance.Volume = .3f;
+
+            mainTheme = Content.Load<Song>("battleThemeA");
+            MediaPlayer.Volume = .2f;
+            MediaPlayer.Play(mainTheme);
 
             ShotOffset = new Vector2(Ship.Width / 2, Ship.Height / 2);
             ShotOffset += new Vector2(60, -24f);
@@ -81,19 +96,20 @@ namespace ship_adventure
                 movement.Y += 2;
             }
 
-            if (keystate.IsKeyDown(Keys.Space))
+            if (keystate.IsKeyDown(Keys.Space) && !HasShot)
             {
                 ShotPosition = ShipPosition + ShotOffset;
                 HasShot = true;
+                soundFxInstance.Play();
             }
 
             ShipPosition += movement;
 
             if (HasShot)
             {
-                ShotPosition.X += 5;
+                ShotPosition.X += 7;
 
-                if (ShipPosition.X > GraphicsDevice.Viewport.Width)
+                if (ShotPosition.X > GraphicsDevice.Viewport.Width)
                 {
                     HasShot = false;
                 }
