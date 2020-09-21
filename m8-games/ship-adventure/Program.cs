@@ -1,4 +1,5 @@
 ﻿using System;
+using GameStateManagementSample;
 
 namespace ship_adventure
 {
@@ -7,7 +8,7 @@ namespace ship_adventure
         [STAThread]
         static void Main()
         {
-            using (var game = new Game1())
+            using (var game = new GameStateManagementGame())
                 game.Run();
         }
     }
